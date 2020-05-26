@@ -9,9 +9,10 @@
 import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
+    let appCoordinator = AppCoordinator()
 
     func applicationDidFinishLaunching() {
-        // Perform any final initialization of your application.
+        appCoordinator.start()
     }
 
     func applicationDidBecomeActive() {
