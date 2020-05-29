@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (5.2.1)
+  - EFQRCode/watchOS (5.1.6):
+    - swift_qrcodejs (>= 1.1.1)
   - KeychainAccess (4.2.0)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
@@ -7,9 +9,11 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
+  - swift_qrcodejs (1.1.2)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - EFQRCode/watchOS
   - KeychainAccess
   - RxCocoa
   - RxSwift
@@ -17,18 +21,22 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - EFQRCode
     - KeychainAccess
     - RxCocoa
     - RxRelay
     - RxSwift
+    - swift_qrcodejs
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  EFQRCode: a7ea2e517912f5bf6ba258b631327a83cd8084a5
   KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  swift_qrcodejs: 4d024fc98b0778b804ec6a5c810880fd092aec9d
 
-PODFILE CHECKSUM: 15b109d4efac4863b7dce39eff0b13a3e7aab0a6
+PODFILE CHECKSUM: c43bc3209c4005bc207790765f6cdb2eecbb1793
 
 COCOAPODS: 1.9.2

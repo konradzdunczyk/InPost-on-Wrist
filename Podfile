@@ -25,5 +25,6 @@ target 'InPost on Wrist WatchKit Extension' do
   pod 'RxCocoa'
   pod 'KeychainAccess'
   pod 'Alamofire', '~> 5.2'
+  pod 'EFQRCode/watchOS'
 
 end

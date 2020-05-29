@@ -98,22 +98,32 @@ class LoginCoordinator: Coordinator {
     }
 }
 
+class ParcelsListCoordinator: Coordinator {
+    func start() {
+        let vm = ParcelsListViewModel()
+        vm.parcelSelected = { parcel in
+            WKExtension.shared().rootInterfaceController?.pushController(withName: "ParcelDetailsController", context: parcel)
+        }
+
+        WKInterfaceController.reloadRootControllers(withNamesAndContexts: [(name: "ParcelsControllerIdentifier", context: vm as AnyObject)])
+    }
+}
+
 class AppCoordinator: Coordinator {
     let userManager: UserManagerType = UserManager(authTokensStorage: AuthTokensKeychainStorage())
+    var parcelService: ParcelService = NetworkParcelService()
+
     lazy var loginCoordinator = LoginCoordinator(userManager: userManager)
+    lazy var parcelsListCoordinator = ParcelsListCoordinator()
 
     func start() {
-        if userManager.isUserLogedin {
-            afterLogin()
-        } else {
-            loginCoordinator.start()
-            loginCoordinator.finishHandler = { [weak self] in
-                self?.afterLogin()
-            }
-        }
-    }
-
-    func afterLogin() {
-        fatalError("Not implemented")
+//        if userManager.isUserLogedin {
+            parcelsListCoordinator.start()
+//        } else {
+//            loginCoordinator.start()
+//            loginCoordinator.finishHandler = { [parcelsListCoordinator] in
+//                parcelsListCoordinator.start()
+//            }
+//        }
     }
 }

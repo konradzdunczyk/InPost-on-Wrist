@@ -41,5 +41,144 @@
             </objects>
             <point key="canvasLocation" x="25" y="29"/>
         </scene>
+        <!--ParcelsControllerIdentifier-->
+        <scene sceneID="fpZ-q6-hox">
+            <objects>
+                <controller identifier="ParcelsControllerIdentifier" id="2mV-pV-yyE" customClass="ParcelsController" customModule="InPost_on_Wrist_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="eFC-yO-U8p">
+                            <items>
+                                <tableRow identifier="ParcelRowControllerIdentifier" id="qs1-fe-12V" customClass="ParcelRowController" customModule="InPost_on_Wrist_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="96" alignment="left" layout="vertical" id="aye-cV-iKV">
+                                        <items>
+                                            <label width="1" alignment="left" text="Label" id="j3f-J2-dbT"/>
+                                            <timer alignment="right" id="oTe-8E-6Ep"/>
+                                            <label alignment="left" text="Label" id="6d0-0v-Mtd"/>
+                                            <label alignment="left" text="Label" id="saZ-7r-Hhg"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="expireTimeer" destination="oTe-8E-6Ep" id="om8-JV-oD6"/>
+                                        <outlet property="lblLocker" destination="saZ-7r-Hhg" id="aqx-jh-kd7"/>
+                                        <outlet property="lblParcelNumber" destination="j3f-J2-dbT" id="Rem-rw-J8y"/>
+                                        <outlet property="lblSender" destination="6d0-0v-Mtd" id="pL9-58-ead"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="eFC-yO-U8p" id="1WT-A3-H5n"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="321" y="-159"/>
+        </scene>
+        <!--QrCodeController-->
+        <scene sceneID="R1E-mg-lFM">
+            <objects>
+                <controller identifier="QrCodeController" id="5VN-bo-8WZ" customClass="QrCodeController" customModule="InPost_on_Wrist_WatchKit_Extension">
+                    <items>
+                        <imageView width="1" height="1" alignment="left" id="chs-l5-gOv"/>
+                    </items>
+                    <connections>
+                        <outlet property="ivQrCode" destination="chs-l5-gOv" id="uSg-1y-F1w"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="970" y="-438"/>
+        </scene>
+        <!--MapController-->
+        <scene sceneID="IjC-aY-I2M">
+            <objects>
+                <controller identifier="MapController" id="fFQ-R9-qc0" customClass="MapController" customModule="InPost_on_Wrist_WatchKit_Extension">
+                    <items>
+                        <map width="1" height="1" alignment="left" id="UPT-nI-Gnu"/>
+                    </items>
+                    <connections>
+                        <outlet property="mapView" destination="UPT-nI-Gnu" id="9D7-tF-7bP"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="970" y="-740"/>
+        </scene>
+        <!--ParcelDetailsController-->
+        <scene sceneID="sIb-vm-yGK">
+            <objects>
+                <controller identifier="ParcelDetailsController" id="fLp-Wl-khm" customClass="ParcelDetailsController" customModule="InPost_on_Wrist_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Label" textAlignment="left" numberOfLines="0" id="1JJ-Q5-O3Y"/>
+                        <separator alignment="left" id="f1o-JV-F9B"/>
+                        <group width="1" alignment="left" layout="vertical" id="HxU-EV-4uI">
+                            <items>
+                                <label alignment="left" text="Label" id="e8W-OF-jkZ"/>
+                                <timer alignment="right" id="hKw-Nh-QZw"/>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Nadawca:" id="yBY-vb-req">
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </label>
+                        <label alignment="left" text="qwerty@o2.pl" id="mft-se-Zwq"/>
+                        <button width="1" alignment="left" title="Otwórz skrytkę" id="ARN-gF-N8O">
+                            <connections>
+                                <action selector="openCompartment" destination="fLp-Wl-khm" id="5gu-VK-w9a"/>
+                            </connections>
+                        </button>
+                        <button alignment="left" id="hKp-AV-R0O">
+                            <group key="contentGroup" width="1" alignment="left" layout="vertical" id="Cda-4k-Gt3">
+                                <items>
+                                    <label alignment="left" text="Miejsce odbioru:" id="b1K-xD-gF5">
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <label alignment="left" text="WAW18AP" id="1d9-Og-Svo"/>
+                                    <label alignment="left" textAlignment="left" numberOfLines="0" id="Yth-PM-Pfh">
+                                        <string key="text">Puławska 182
+02-670 Warszawa</string>
+                                    </label>
+                                </items>
+                                <color key="backgroundColor" red="0.3039791127" green="0.3039791127" blue="0.3039791127" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <edgeInsets key="margins" left="2" right="2" top="2" bottom="2"/>
+                            </group>
+                            <connections>
+                                <action selector="showMap" destination="fLp-Wl-khm" id="MWI-Rl-qDf"/>
+                            </connections>
+                        </button>
+                        <button alignment="left" id="QMz-zN-RsJ">
+                            <group key="contentGroup" width="1" alignment="left" layout="vertical" id="nR4-tP-YFd">
+                                <items>
+                                    <label alignment="left" text="Kod odbioru:" id="RLo-eE-993">
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <label alignment="left" text="999999" id="3aP-sN-5NR"/>
+                                    <label alignment="left" text="Nr telefonu:" id="fff-wS-nfq">
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <label alignment="left" text="123 456 789" id="KqD-DS-2Io"/>
+                                </items>
+                                <color key="backgroundColor" red="0.30397911269430056" green="0.30397911269430056" blue="0.30397911269430056" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <edgeInsets key="margins" left="2" right="2" top="2" bottom="2"/>
+                            </group>
+                            <connections>
+                                <action selector="showQrCode" destination="fLp-Wl-khm" id="pNj-Pu-bws"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="collectInfoButton" destination="QMz-zN-RsJ" id="ofW-Db-ps5"/>
+                        <outlet property="expiryGroup" destination="HxU-EV-4uI" id="ya6-UB-5HR"/>
+                        <outlet property="lblExpireDate" destination="e8W-OF-jkZ" id="JLN-wE-Y5j"/>
+                        <outlet property="lblExpireTimer" destination="hKw-Nh-QZw" id="GkN-5v-CCl"/>
+                        <outlet property="lblLockerAddress" destination="Yth-PM-Pfh" id="IYe-zw-UeQ"/>
+                        <outlet property="lblLockerName" destination="1d9-Og-Svo" id="Dkm-Qx-RmD"/>
+                        <outlet property="lblOpenCode" destination="3aP-sN-5NR" id="QWv-Ii-a59"/>
+                        <outlet property="lblParcelNumber" destination="1JJ-Q5-O3Y" id="H0T-WI-YsS"/>
+                        <outlet property="lblPhoneNumber" destination="KqD-DS-2Io" id="5zc-YS-GvL"/>
+                        <outlet property="lblSender" destination="mft-se-Zwq" id="4Je-Wu-6Gg"/>
+                        <outlet property="lockerButton" destination="hKp-AV-R0O" id="cIB-yP-3TS"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="529" y="-563"/>
+        </scene>
     </scenes>
 </document>
