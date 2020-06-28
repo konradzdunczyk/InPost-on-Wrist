@@ -23,6 +23,7 @@ target 'InPost on Wrist WatchKit Extension' do
 
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RxCoreLocation', '~> 1.4'
   pod 'KeychainAccess'
   pod 'Alamofire', '~> 5.2'
   pod 'EFQRCode/watchOS'

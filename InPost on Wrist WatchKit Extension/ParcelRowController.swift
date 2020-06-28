@@ -15,7 +15,7 @@ class ParcelRowController: NSObject {
     @IBOutlet var lblLocker: WKInterfaceLabel!
 
     func setup(with parcel: Parcel) {
-        lblParcelNumber.setText("..." + String(parcel.shipmentNumber.suffix(8)))
+        lblParcelNumber.setText("..." + String(parcel.shipmentNumber.suffix(13)))
 
         if let exppireDate = parcel.expiryDate {
             expireTimeer.setDate(exppireDate)

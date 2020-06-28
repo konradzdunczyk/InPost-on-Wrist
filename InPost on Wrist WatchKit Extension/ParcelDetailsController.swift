@@ -11,16 +11,6 @@ import RxSwift
 import RxRelay
 import RxCocoa
 
-class LockerAddressButton: WKInterfaceButton {
-    func setup(with pickupPoint: PickupPoint) {
-
-    }
-}
-
-class CollectInfoButton: WKInterfaceButton {
-
-}
-
 class ParcelDetailsController: WKInterfaceController {
     @IBOutlet var lblParcelNumber: WKInterfaceLabel!
     @IBOutlet var lblExpireDate: WKInterfaceLabel!
@@ -33,8 +23,8 @@ class ParcelDetailsController: WKInterfaceController {
     @IBOutlet private var lblLockerName: WKInterfaceLabel!
     @IBOutlet private var lblLockerAddress: WKInterfaceLabel!
 
-    @IBOutlet var lockerButton: LockerAddressButton!
-    @IBOutlet var collectInfoButton: CollectInfoButton!
+    @IBOutlet var lockerButton: WKInterfaceButton!
+    @IBOutlet var collectInfoButton: WKInterfaceButton!
 
     @IBOutlet var expiryGroup: WKInterfaceGroup!
 
@@ -48,7 +38,8 @@ class ParcelDetailsController: WKInterfaceController {
     }
 
     @IBAction func openCompartment() {
-
+        pushController(withName: "LocationLogController",
+                       context: nil)
     }
 
     @IBAction func showMap() {

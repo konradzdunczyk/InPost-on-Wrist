@@ -6,6 +6,11 @@ PODS:
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
+  - RxCoreLocation (1.5.0):
+    - RxCoreLocation/Core (= 1.5.0)
+  - RxCoreLocation/Core (1.5.0):
+    - RxCocoa (~> 5.1)
+    - RxSwift (~> 5.1)
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
@@ -16,6 +21,7 @@ DEPENDENCIES:
   - EFQRCode/watchOS
   - KeychainAccess
   - RxCocoa
+  - RxCoreLocation (~> 1.4)
   - RxSwift
 
 SPEC REPOS:
@@ -24,6 +30,7 @@ SPEC REPOS:
     - EFQRCode
     - KeychainAccess
     - RxCocoa
+    - RxCoreLocation
     - RxRelay
     - RxSwift
     - swift_qrcodejs
@@ -33,10 +40,11 @@ SPEC CHECKSUMS:
   EFQRCode: a7ea2e517912f5bf6ba258b631327a83cd8084a5
   KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxCoreLocation: 4789d980742b21c087062387f6758b456221fb2f
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   swift_qrcodejs: 4d024fc98b0778b804ec6a5c810880fd092aec9d
 
-PODFILE CHECKSUM: c43bc3209c4005bc207790765f6cdb2eecbb1793
+PODFILE CHECKSUM: f696343ab547aefc35919f129a4be0003ed88315
 
 COCOAPODS: 1.9.2

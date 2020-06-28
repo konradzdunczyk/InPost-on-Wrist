@@ -51,7 +51,7 @@
                                 <tableRow identifier="ParcelRowControllerIdentifier" id="qs1-fe-12V" customClass="ParcelRowController" customModule="InPost_on_Wrist_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="96" alignment="left" layout="vertical" id="aye-cV-iKV">
                                         <items>
-                                            <label width="1" alignment="left" text="Label" id="j3f-J2-dbT"/>
+                                            <label width="1" alignment="right" text="Label" id="j3f-J2-dbT"/>
                                             <timer alignment="right" id="oTe-8E-6Ep"/>
                                             <label alignment="left" text="Label" id="6d0-0v-Mtd"/>
                                             <label alignment="left" text="Label" id="saZ-7r-Hhg"/>
@@ -87,6 +87,20 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="970" y="-438"/>
+        </scene>
+        <!--LocationLogController-->
+        <scene sceneID="AFL-HF-VYn">
+            <objects>
+                <controller identifier="LocationLogController" id="Iou-IP-T03" customClass="LocationLogController" customModule="InPost_on_Wrist_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Label" textAlignment="left" numberOfLines="0" id="yCz-cq-XXq"/>
+                    </items>
+                    <connections>
+                        <outlet property="lblLog" destination="yCz-cq-XXq" id="JXk-bo-uBz"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="962" y="-54"/>
         </scene>
         <!--MapController-->
         <scene sceneID="IjC-aY-I2M">
