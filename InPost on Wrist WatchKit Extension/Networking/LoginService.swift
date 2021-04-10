@@ -33,7 +33,7 @@ class NetworkLoginService: LoginService {
             return $0
         }(DateFormatter()))
 
-        AF.request("https://api-inmobile-pl.easypack24.net/v1/sendSMSCode/\(telNumber)", method: HTTPMethod.get, headers: inpostCommonHeaders)
+        afSession.request("https://api-inmobile-pl.easypack24.net/v1/sendSMSCode/\(telNumber)", method: HTTPMethod.get, headers: inpostCommonHeaders)
             .validate()
             .responseDecodable(of: SmsSentConfirmation.self, decoder: decoder) { (response) in
                 switch response.result {
@@ -60,7 +60,7 @@ class NetworkLoginService: LoginService {
         // {"phoneOS":"Apple"}
 
         let parameters: [String : String] = ["phoneOS" : "Apple"]
-        let request = AF.request("https://api-inmobile-pl.easypack24.net/v1/confirmSMSCode/\(telephonNumber)/\(smsCode)",
+        let request = afSession.request("https://api-inmobile-pl.easypack24.net/v1/confirmSMSCode/\(telephonNumber)/\(smsCode)",
             method: HTTPMethod.post,
             parameters: parameters,
             encoder: JSONParameterEncoder.default,
@@ -101,7 +101,7 @@ class NetworkLoginService: LoginService {
         var headers = inpostCommonHeaders
         headers.add(.authorization(oldAuthToken))
 
-        let request = AF.request("https://api-inmobile-pl.easypack24.net/v1/authenticate",
+        let request = afSession.request("https://api-inmobile-pl.easypack24.net/v1/authenticate",
             method: HTTPMethod.post,
             parameters: parameters,
             encoder: JSONParameterEncoder.default,

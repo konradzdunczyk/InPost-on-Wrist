@@ -11,7 +11,7 @@ import RxSwift
 import RxRelay
 import RxCocoa
 
-class ParcelDetailsController: WKInterfaceController {
+class ParcelDetailsController: KZInterfaceController {
     @IBOutlet var lblParcelNumber: WKInterfaceLabel!
     @IBOutlet var lblExpireDate: WKInterfaceLabel!
     @IBOutlet var lblExpireTimer: WKInterfaceTimer!
@@ -38,13 +38,13 @@ class ParcelDetailsController: WKInterfaceController {
     }
 
     @IBAction func openCompartment() {
-        pushController(withName: "LocationLogController",
-                       context: nil)
+        pushController(withName: "OpeningCompartmentController",
+                       context: _parcel)
     }
 
     @IBAction func showMap() {
         pushController(withName: "MapController",
-                       context: _parcel.pickupPoint)
+                       context: _parcel.pickUpPoint)
     }
 
     @IBAction func showQrCode() {
@@ -69,18 +69,18 @@ class ParcelDetailsController: WKInterfaceController {
             expiryGroup.setHidden(true)
         }
 
-        lblSender.setText(parcel.senderName)
+        lblSender.setText(parcel.sender?.name ?? "-")
 
         if let openCode = parcel.openCode {
             lblOpenCode.setText(openCode)
-            lblPhoneNumber.setText(parcel.phoneNumber)
+            lblPhoneNumber.setText(parcel.receiver?.phoneNumber ?? "-")
             collectInfoButton.setHidden(false)
         } else {
             collectInfoButton.setHidden(true)
         }
 
         let address: String? = {
-            guard let addressDetails = parcel.pickupPoint.addressDetails else {
+            guard let addressDetails = parcel.pickUpPoint?.addressDetails else {
                 return nil
             }
 
@@ -90,7 +90,7 @@ class ParcelDetailsController: WKInterfaceController {
             """
         }()
 
-        lblLockerName.setText(parcel.pickupPoint.name)
+        lblLockerName.setText(parcel.pickUpPoint?.name ?? "-")
         lblLockerAddress.setText(address)
     }
 }

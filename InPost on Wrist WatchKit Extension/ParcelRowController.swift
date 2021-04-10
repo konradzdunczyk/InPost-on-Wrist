@@ -25,7 +25,7 @@ class ParcelRowController: NSObject {
             expireTimeer.setHidden(true)
         }
 
-        lblSender.setText(parcel.senderName)
-        lblLocker.setText(parcel.pickupPoint.name)
+        lblSender.setText(parcel.sender?.name ?? "-")
+        lblLocker.setText(parcel.pickUpPoint?.name ?? "-")
     }
 }

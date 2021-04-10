@@ -54,10 +54,8 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "NO">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/InPost on Wrist WatchKit App">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "17EAAEC2247D7A1D0091E2A4"
@@ -65,7 +63,7 @@
             BlueprintName = "InPost on Wrist WatchKit App"
             ReferencedContainer = "container:InPost on Wrist.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
+      </BuildableProductRunnable>
       <LocationScenarioReference
          identifier = "../test.gpx"
          referenceType = "0">
@@ -77,10 +75,8 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/InPost on Wrist WatchKit App">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "17EAAEC2247D7A1D0091E2A4"
@@ -88,16 +84,7 @@
             BlueprintName = "InPost on Wrist WatchKit App"
             ReferencedContainer = "container:InPost on Wrist.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "17EAAEC2247D7A1D0091E2A4"
-            BuildableName = "InPost on Wrist WatchKit App.app"
-            BlueprintName = "InPost on Wrist WatchKit App"
-            ReferencedContainer = "container:InPost on Wrist.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

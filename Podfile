@@ -25,7 +25,9 @@ target 'InPost on Wrist WatchKit Extension' do
   pod 'RxCocoa'
   pod 'RxCoreLocation', '~> 1.4'
   pod 'KeychainAccess'
-  pod 'Alamofire', '~> 5.2'
+  pod 'Alamofire', '~> 5.4'
+  pod 'AlamofireNetworkActivityLogger', '~> 3.4'
   pod 'EFQRCode/watchOS'
+  pod 'SwiftyBeaver'
 
 end

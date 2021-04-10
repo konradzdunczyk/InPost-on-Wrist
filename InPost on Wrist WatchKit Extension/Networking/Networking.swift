@@ -56,7 +56,7 @@ final class RequestInterceptor: Alamofire.RequestInterceptor {
 let inpostCommonHeaders: HTTPHeaders = [
     .contentType("application/json"),
     .accept("application/json"),
-    .userAgent("InPost-Mobile/2.6.0-release (iOS 13.4.1; iPad5,4; pl)"),
+    .userAgent("InPost-Mobile/3.1.0-release (iOS 13.4.1; iPad5,4; pl)"),
     .acceptLanguage("pl-PL"),
     .acceptEncoding("gzip, deflate, br")
 ]

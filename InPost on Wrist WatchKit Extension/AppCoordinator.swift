@@ -117,13 +117,13 @@ class AppCoordinator: Coordinator {
     lazy var parcelsListCoordinator = ParcelsListCoordinator()
 
     func start() {
-//        if userManager.isUserLogedin {
+        if userManager.isUserLogedin {
             parcelsListCoordinator.start()
-//        } else {
-//            loginCoordinator.start()
-//            loginCoordinator.finishHandler = { [parcelsListCoordinator] in
-//                parcelsListCoordinator.start()
-//            }
-//        }
+        } else {
+            loginCoordinator.start()
+            loginCoordinator.finishHandler = { [parcelsListCoordinator] in
+                parcelsListCoordinator.start()
+            }
+        }
     }
 }

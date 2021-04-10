@@ -1,5 +1,7 @@
 PODS:
-  - Alamofire (5.2.1)
+  - Alamofire (5.4.1)
+  - AlamofireNetworkActivityLogger (3.4.0):
+    - Alamofire (~> 5.4.0)
   - EFQRCode/watchOS (5.1.6):
     - swift_qrcodejs (>= 1.1.1)
   - KeychainAccess (4.2.0)
@@ -15,18 +17,22 @@ PODS:
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
   - swift_qrcodejs (1.1.2)
+  - SwiftyBeaver (1.9.3)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.2)
+  - Alamofire (~> 5.4)
+  - AlamofireNetworkActivityLogger (~> 3.4)
   - EFQRCode/watchOS
   - KeychainAccess
   - RxCocoa
   - RxCoreLocation (~> 1.4)
   - RxSwift
+  - SwiftyBeaver
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AlamofireNetworkActivityLogger
     - EFQRCode
     - KeychainAccess
     - RxCocoa
@@ -34,9 +40,11 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - swift_qrcodejs
+    - SwiftyBeaver
 
 SPEC CHECKSUMS:
-  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  AlamofireNetworkActivityLogger: 162ab8aee00e6267a4304d7cc134e13ccfe3bcc5
   EFQRCode: a7ea2e517912f5bf6ba258b631327a83cd8084a5
   KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
@@ -44,7 +52,8 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   swift_qrcodejs: 4d024fc98b0778b804ec6a5c810880fd092aec9d
+  SwiftyBeaver: 2e8acd6fc90c6d0a27055867a290794926d57c02
 
-PODFILE CHECKSUM: f696343ab547aefc35919f129a4be0003ed88315
+PODFILE CHECKSUM: 3865cb2d95776af875545a1ac68dbc631e2cb8f1
 
 COCOAPODS: 1.9.2

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15705" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ryf-AY-Yak">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17701" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ryf-AY-Yak">
     <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17500"/>
     </dependencies>
     <scenes>
         <!--Dummy Controller-->
@@ -73,6 +74,32 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="321" y="-159"/>
+        </scene>
+        <!--OpeningCompartmentController-->
+        <scene sceneID="Ua8-5r-1zS">
+            <objects>
+                <controller identifier="OpeningCompartmentController" id="o99-Rb-QdL" customClass="OpeningCompartmentController" customModule="InPost_on_Wrist_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Label" textAlignment="left" id="z9R-gR-Exe"/>
+                        <button width="1" alignment="left" title="Reopen" id="28y-Fc-UGq">
+                            <connections>
+                                <action selector="reopen" destination="o99-Rb-QdL" id="jCL-GQ-ouX"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Done" id="Pgs-Kr-DKJ">
+                            <connections>
+                                <action selector="done" destination="o99-Rb-QdL" id="OUm-Zi-USb"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="btnDone" destination="Pgs-Kr-DKJ" id="xwa-p1-Nfs"/>
+                        <outlet property="btnReopen" destination="28y-Fc-UGq" id="68s-Rj-PPv"/>
+                        <outlet property="lblStatus" destination="z9R-gR-Exe" id="rnn-6H-ovd"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="597" y="-107"/>
         </scene>
         <!--QrCodeController-->
         <scene sceneID="R1E-mg-lFM">

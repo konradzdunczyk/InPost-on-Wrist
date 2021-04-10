@@ -21,6 +21,9 @@
 		1720764D2481810D00737262 /* ParcelDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1720764C2481810D00737262 /* ParcelDetailsController.swift */; };
 		1720764F2481989B00737262 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1720764E2481989B00737262 /* MapController.swift */; };
 		174488BD247D880700A23646 /* DummyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174488BC247D880700A23646 /* DummyController.swift */; };
+		17A917BD26079F2400E67818 /* KZInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A917BC26079F2400E67818 /* KZInterfaceController.swift */; };
+		17A917C22607AD4700E67818 /* ParcelCollectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A917C12607AD4700E67818 /* ParcelCollectManager.swift */; };
+		17A917C72607B67800E67818 /* OpeningCompartmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A917C62607B67800E67818 /* OpeningCompartmentController.swift */; };
 		17C95E5124A7FAE70053495F /* LocationLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C95E5024A7FAE70053495F /* LocationLogController.swift */; };
 		17C95E5324A906880053495F /* CollectParcel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C95E5224A906880053495F /* CollectParcel.swift */; };
 		17EAAEC4247D7A1D0091E2A4 /* InPost on Wrist WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 17EAAEC3247D7A1D0091E2A4 /* InPost on Wrist WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -93,6 +96,9 @@
 		1720764C2481810D00737262 /* ParcelDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelDetailsController.swift; sourceTree = "<group>"; };
 		1720764E2481989B00737262 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		174488BC247D880700A23646 /* DummyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyController.swift; sourceTree = "<group>"; };
+		17A917BC26079F2400E67818 /* KZInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KZInterfaceController.swift; sourceTree = "<group>"; };
+		17A917C12607AD4700E67818 /* ParcelCollectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelCollectManager.swift; sourceTree = "<group>"; };
+		17A917C62607B67800E67818 /* OpeningCompartmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningCompartmentController.swift; sourceTree = "<group>"; };
 		17C95E5024A7FAE70053495F /* LocationLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationLogController.swift; sourceTree = "<group>"; };
 		17C95E5224A906880053495F /* CollectParcel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectParcel.swift; sourceTree = "<group>"; };
 		17EAAEBF247D7A1D0091E2A4 /* InPost on Wrist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InPost on Wrist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +166,7 @@
 				17207638247ED88500737262 /* Networking.swift */,
 				17207640247EDFC800737262 /* LoginService.swift */,
 				17207642247EE0BF00737262 /* ParcelService.swift */,
+				17A917C12607AD4700E67818 /* ParcelCollectManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -213,6 +220,8 @@
 				1720764A247F032A00737262 /* QrCodeController.swift */,
 				1720764E2481989B00737262 /* MapController.swift */,
 				17C95E5024A7FAE70053495F /* LocationLogController.swift */,
+				17A917BC26079F2400E67818 /* KZInterfaceController.swift */,
+				17A917C62607B67800E67818 /* OpeningCompartmentController.swift */,
 			);
 			path = "InPost on Wrist WatchKit Extension";
 			sourceTree = "<group>";
@@ -468,13 +477,16 @@
 				1720763E247ED94C00737262 /* AuthInfos.swift in Sources */,
 				17207641247EDFC800737262 /* LoginService.swift in Sources */,
 				17EAAEEC247D7C8F0091E2A4 /* AppCoordinator.swift in Sources */,
+				17A917C72607B67800E67818 /* OpeningCompartmentController.swift in Sources */,
 				17207639247ED88500737262 /* Networking.swift in Sources */,
+				17A917BD26079F2400E67818 /* KZInterfaceController.swift in Sources */,
 				17EAAEDA247D7A1F0091E2A4 /* ExtensionDelegate.swift in Sources */,
 				17207649247EF17800737262 /* ParcelsController.swift in Sources */,
 				17207645247EE66200737262 /* Parcel.swift in Sources */,
 				17C95E5324A906880053495F /* CollectParcel.swift in Sources */,
 				17207643247EE0BF00737262 /* ParcelService.swift in Sources */,
 				17EAAED8247D7A1F0091E2A4 /* LoginController.swift in Sources */,
+				17A917C22607AD4700E67818 /* ParcelCollectManager.swift in Sources */,
 				17207647247EEEC000737262 /* ParcelRowController.swift in Sources */,
 				1720764B247F032A00737262 /* QrCodeController.swift in Sources */,
 			);

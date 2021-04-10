@@ -7,11 +7,47 @@
 //
 
 import WatchKit
+import Alamofire
+import AlamofireNetworkActivityLogger
+import SwiftyBeaver
+
+let log = SwiftyBeaver.self
+let logFile: URL? = {
+    guard let url = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first else {
+        return nil
+    }
+
+    let dateFromatter: DateFormatter = {
+        $0.dateFormat = "yyyy_MM_dd__HH_mm_ss"
+
+        return $0
+    }(DateFormatter())
+
+    return url.appendingPathComponent("swiftybeaver_\(dateFromatter.string(from: Date())).log", isDirectory: false)
+}()
+
+let afSession: Session = {
+    let manager = ServerTrustManager(allHostsMustBeEvaluated: false, evaluators: ["api-inmobile-pl.easypack24.net" : DisabledTrustEvaluator()])
+    return Session(serverTrustManager: manager)
+}()
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     let appCoordinator = AppCoordinator()
 
     func applicationDidFinishLaunching() {
+        NetworkActivityLogger.shared.startLogging()
+        let console = ConsoleDestination()
+        let file = FileDestination(logFileURL: logFile)
+
+        console.format = "$DHH:mm:ss$d $L\n\t$n:$l\n\t\t$M"
+        file.format = "$DHH:mm:ss$d $L\n\t$n:$l\n\t\t$M"
+
+        log.addDestination(console)
+        log.addDestination(file)
+
+        NetworkCollectParcelService().validateParcel(shipmentNumber: "123123", openCode: "345345", location: CLLocation(latitude: 12, longitude: 12),
+                                                     completion: { _ in })
+
         appCoordinator.start()
     }
 

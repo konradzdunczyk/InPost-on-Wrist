@@ -14,7 +14,7 @@ class MapController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
 
-        guard let pickupPoint = context as? PickupPoint else { return }
+        guard let pickupPoint = context as? PickUpPoint else { return }
 
         let pickupLocCoord = CLLocationCoordinate2D(latitude: pickupPoint.location.latitude,
                                                     longitude: pickupPoint.location.longitude)

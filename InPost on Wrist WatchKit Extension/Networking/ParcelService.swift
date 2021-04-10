@@ -17,19 +17,38 @@ protocol ParcelService {
 class NetworkParcelService: ParcelService {
     func getParcels(updatedAfter: Date?, completion: @escaping (Result<[Parcel], AFError>) -> Void) {
         let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
+        decoder.dateDecodingStrategy = .formatted({
+            $0.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
 
-        let request = AF.request("https://api-inmobile-pl.easypack24.net/v1/parcel/",
+            return $0
+        }(DateFormatter()))
+
+        let parameters: Parameters? = {
+            guard let updatedAfter = updatedAfter else { return nil }
+
+            let dateFormatter: DateFormatter = {
+                $0.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+
+                return $0
+            }(DateFormatter())
+
+            return [
+                "updatedAfter" : dateFormatter.string(from: updatedAfter)
+            ]
+        }()
+
+        let request = afSession.request("https://api-inmobile-pl.easypack24.net/v1/parcels/tracked",
             method: HTTPMethod.get,
+            parameters: parameters,
             headers: inpostCommonHeaders,
             interceptor: authRequestInterceptor)
 
         request
             .validate()
-            .responseDecodable(of: [Parcel].self, decoder: decoder) { (response) in
+            .responseDecodable(of: Parcels.self, decoder: decoder) { (response) in
                 switch response.result {
                 case .success(let parcels):
-                    completion(.success(parcels))
+                    completion(.success(parcels.parcels))
                 case .failure(let error):
                     completion(.failure(error))
                 }
@@ -65,9 +84,10 @@ class NetworkCollectParcelService: CollectParcelService {
             ]
         ]
 
-        let request = AF.request("https://api-inmobile-pl.easypack24.net/v1/collect/validate",
+        let request = afSession.request("https://api-inmobile-pl.easypack24.net/v1/collect/validate",
             method: HTTPMethod.post,
             parameters: parameters,
+            encoding: JSONEncoding(),
             headers: inpostCommonHeaders,
             interceptor: authRequestInterceptor)
 
@@ -84,7 +104,7 @@ class NetworkCollectParcelService: CollectParcelService {
     }
 
     func openCompartment(sessionUuid: String, completion: @escaping (Result<OpenedCompartmentInfo, AFError>) -> Void) {
-        let request = AF.request("https://api-inmobile-pl.easypack24.net/v1/collect/compartment/open/\(sessionUuid)",
+        let request = afSession.request("https://api-inmobile-pl.easypack24.net/v1/collect/compartment/open/\(sessionUuid)",
             method: HTTPMethod.post,
             headers: inpostCommonHeaders,
             interceptor: authRequestInterceptor)
@@ -102,7 +122,7 @@ class NetworkCollectParcelService: CollectParcelService {
     }
 
     func reopenCompartment(sessionUuid: String, completion: @escaping (Result<OpenedCompartmentInfo, AFError>) -> Void) {
-        let request = AF.request("https://api-inmobile-pl.easypack24.net/v1/collect/compartment/reopen/\(sessionUuid)",
+        let request = afSession.request("https://api-inmobile-pl.easypack24.net/v1/collect/compartment/reopen/\(sessionUuid)",
             method: HTTPMethod.post,
             headers: inpostCommonHeaders,
             interceptor: authRequestInterceptor)
@@ -122,7 +142,7 @@ class NetworkCollectParcelService: CollectParcelService {
     func compartmentStatus(sessionUuid: String, expectedStatus: CollectParcelExpectedStatus, completion: @escaping (Result<OpenedCompartmentStatus, AFError>) -> Void) {
         let parameters: [String : Any] = ["expected" : expectedStatus.rawValue]
 
-        let request = AF.request("https://api-inmobile-pl.easypack24.net/v1/collect/compartment/status/\(sessionUuid)",
+        let request = afSession.request("https://api-inmobile-pl.easypack24.net/v1/collect/compartment/status/\(sessionUuid)",
             method: HTTPMethod.get,
             parameters: parameters,
             headers: inpostCommonHeaders,
@@ -141,7 +161,7 @@ class NetworkCollectParcelService: CollectParcelService {
     }
 
     func closeCompartment(sessionUuid: String, completion: @escaping (Result<CloseStatus, AFError>) -> Void) {
-        let request = AF.request("https://api-inmobile-pl.easypack24.net/v1/collect/compartment/close/\(sessionUuid)",
+        let request = afSession.request("https://api-inmobile-pl.easypack24.net/v1/collect/compartment/close/\(sessionUuid)",
             method: HTTPMethod.get,
             headers: inpostCommonHeaders,
             interceptor: authRequestInterceptor)
@@ -159,7 +179,7 @@ class NetworkCollectParcelService: CollectParcelService {
     }
 
     func terminate(sessionUuid: String, completion: @escaping (Result<Void, AFError>) -> Void) {
-        let request = AF.request("https://api-inmobile-pl.easypack24.net/v1/collect/terminate/\(sessionUuid)",
+        let request = afSession.request("https://api-inmobile-pl.easypack24.net/v1/collect/terminate/\(sessionUuid)",
             method: HTTPMethod.post,
             headers: inpostCommonHeaders,
             interceptor: authRequestInterceptor)
